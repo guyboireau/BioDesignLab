@@ -10,7 +10,7 @@ stop:
 down:
 	docker-compose down
 
-ifeq (wp, $(firstword $(MAKECMDGOALS)))
+ifeq ($(firstword $(MAKECMDGOALS)),$(filter $(firstword $(MAKECMDGOALS)),wp plugin-install))   
   runargs := $(wordlist 2, $(words $(MAKECMDGOALS)), $(MAKECMDGOALS))
   $(eval $(runargs):;@true)
 endif
@@ -20,3 +20,4 @@ wp:
 
 plugin-install:
 	./scripts/plugins-install.sh $(runargs)
+	
