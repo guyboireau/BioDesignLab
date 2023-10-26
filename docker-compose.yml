@@ -1,0 +1,62 @@
+# https://docs.docker.com/samples/wordpress/
+
+services:
+  db:
+    container_name: biolab-db
+    image: mariadb:latest
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - biolab-db:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=somewordpress
+      - MYSQL_DATABASE=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+    expose:
+      - 3306
+      - 33060
+    networks:
+      - biolab-net
+  cms:
+    container_name: biolab-wp
+    image: wordpress:latest
+    volumes:
+      - biolab-wp:/var/www/html
+    ports:
+      - 8000:80
+    depends_on:
+      - db
+    restart: always
+    environment:
+      - WORDPRESS_DB_HOST=db:3306
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+    networks:
+      - biolab-net
+  wp-cli:
+    container_name: wp-cli
+    build: .
+    depends_on:
+      - db
+      - cms
+    restart: on-failure
+    volumes:
+      - biolab-wp:/var/www/html
+      - ./wp-plugins.txt:/var/www/html/wp-plugins.txt
+    environment:
+      - WORDPRESS_DB_HOST=db:3306
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_NAME=wordpress
+    networks:
+      - biolab-net
+
+volumes:
+  biolab-db:
+  biolab-wp:
+
+
+networks:
+  biolab-net:
