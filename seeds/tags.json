@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Couper",
+        "slug": "cut",
+        "description": "TODO"
+    },
+    {
+        "name": "Emboîter",
+        "slug": "fit",
+        "description": "TODO"
+    },
+    {
+        "name": "Aggripper",
+        "slug": "grip",
+        "description": "TODO"
+    }
+]

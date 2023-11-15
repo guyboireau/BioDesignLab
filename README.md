@@ -12,7 +12,10 @@ password: password
 
 ```bash
 make init
+make data-seed
 ```
+
+You can now access the website at [http://localhost:8000](http://localhost:8000)
 
 ## Start docker containers
 
@@ -24,6 +27,13 @@ make start
 
 ```bash
 make stop
+```
+
+## Fixtures
+
+```bash
+make data-seed # to seed the database with fixtures
+make data-clear # to clear the database
 ```
 
 ## Add a plugin
@@ -41,6 +51,6 @@ make plugin-install <plugin-name>
 make wp <command>
 ```
 
-**Note:** You add options to the command. Escape the options with `--` like this: `make wp -- --help`
+**Note:** To add options to the command, pass them inside `OPTIONS` variable like this: `make wp OPTIONS='--help'`
 
 You can find the list of commands [here](https://developer.wordpress.org/cli/commands/)
