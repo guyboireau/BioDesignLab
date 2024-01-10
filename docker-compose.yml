@@ -45,6 +45,9 @@ services:
     volumes:
       - biolab-wp:/var/www/html
       - ./wp-plugins.txt:/var/www/html/wp-plugins.txt
+      - ./medias:/var/www/html/medias
+      - ./seeds:/var/www/html/seeds
+      - ./scripts:/var/www/html/scripts
     environment:
       - WORDPRESS_DB_HOST=db:3306
       - WORDPRESS_DB_USER=wordpress

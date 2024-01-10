@@ -1,5 +1,8 @@
 init:
-	docker compose up -d --build
+	@docker compose up -d --build
+	@echo "\nWaiting for database to be ready and for settings to be applied..."
+	@sleep 30
+	@docker compose run --rm wp-cli node ./scripts/data-seed.mjs
 
 start:
 	docker compose up -d
@@ -8,22 +11,22 @@ stop:
 	docker compose stop
 
 down:
-	docker compose down
+	docker compose down -v
 
 wp-shell:
-	docker exec -it wp /bin/bash
+	docker exec -it biolab-wp /bin/bash
 
 db-shell:
-	docker exec -it db /bin/bash
+	docker exec -it biolab-db /bin/bash
 
 data-seed:
-	@node ./scripts/data-seed.mjs
+	@docker compose run --rm wp-cli node ./scripts/data-seed.mjs
 
 data-clear:
-	@node ./scripts/data-clear.mjs
+	@docker compose run --rm wp-cli node ./scripts/data-clear.mjs
 
 plugin-install:
-	./scripts/plugins-install.sh $(filter-out $@,$(MAKECMDGOALS))
+	@docker compose run --rm wp-cli ./scripts/plugins-install.sh $(filter-out $@,$(MAKECMDGOALS))
 
 wp:
 	@docker compose run --rm wp-cli $(MAKECMDGOALS) $(OPTIONS)

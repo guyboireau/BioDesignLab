@@ -7,9 +7,10 @@ ENV WP_EMAIL="admin@biodesignlab.com"
 ENV WP_TITLE="Bio Desing Lab - WordPress"
 ENV WP_DEBUG=true
 
-# copy install script with permissions
+# copy install script with root permission
 COPY ./scripts/docker-install.sh /usr/local/bin/
 USER root
+RUN apk update && apk add nodejs
 RUN chmod 755 /usr/local/bin/docker-install.sh
 RUN mv /usr/local/bin/wp /usr/local/bin/_wp && \
     echo -e '#!/bin/sh\n_wp --allow-root "$@"' > /usr/local/bin/wp && \

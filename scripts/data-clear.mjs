@@ -1,39 +1,62 @@
 import { exec } from "child_process";
 
-const clearPostData = () => {
+const clearMedias = () => {
   exec(
-    "make wp post delete $(make wp post list OPTIONS='--format=ids')",
+    "wp post delete $(wp post list --post_type=attachment --format=ids) --force",
     (error, stdout, stderr) => {
-      if (error) {
-        console.error(`exec error: ${error}`);
+      if (error || stderr) {
+        console.error(`exec error: ${error || stderr}`);
         return;
       }
       console.log(`stdout: ${stdout}`);
-      console.error(`stderr: ${stderr}`);
-    }
-  );
-  exec(
-    "make wp term delete category $(make wp term list category OPTIONS='--field=term_id')",
-    (error, stdout, stderr) => {
-      if (error) {
-        console.error(`exec error: ${error}`);
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
-      console.error(`stderr: ${stderr}`);
-    }
-  );
-  exec(
-    "make wp term delete post_tag $(make wp term list post_tag OPTIONS='--field=term_id')",
-    (error, stdout, stderr) => {
-      if (error) {
-        console.error(`exec error: ${error}`);
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
-      console.error(`stderr: ${stderr}`);
     }
   );
 };
 
-clearPostData();
+const clearPosts = () => {
+  exec(
+    "wp post delete $(wp post list --format=ids) --force",
+    (error, stdout, stderr) => {
+      if (error || stderr) {
+        console.error(`exec error: ${error || stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    }
+  );
+};
+
+const clearCategories = () => {
+  exec(
+    "wp term delete category $(wp term list category --field=term_id)",
+    (error, stdout, stderr) => {
+      if (error || stderr) {
+        console.error(`exec error: ${error || stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    }
+  );
+};
+
+const clearTags = () => {
+  exec(
+    "wp term delete post_tag $(wp term list post_tag --field=term_id)",
+    (error, stdout, stderr) => {
+      if (error || stderr) {
+        console.error(`exec error: ${error || stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+    }
+  );
+};
+
+const clearData = () => {
+  clearMedias();
+  clearPosts();
+  clearCategories();
+  clearTags();
+};
+
+clearData();

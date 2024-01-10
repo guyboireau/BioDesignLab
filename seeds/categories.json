@@ -1,7 +1,166 @@
 [
     {
-        "name": "Plante",
-        "slug": "plant",
-        "description": "TODO"
+        "name": "Aggripper",
+        "slug": "grip",
+        "description": "TODO",
+        "image": "./functions/grip.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/grip-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/grip-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/grip-3.webp"
+            }
+        ]
+    },
+    {
+        "name": "Protéger",
+        "slug": "protect",
+        "description": "TODO",
+        "image": "./functions/protect.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/protect-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/protect-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/protect-3.webp"
+            }
+        ]
+    },
+    {
+        "name": "Navigation",
+        "slug": "navigate",
+        "description": "TODO",
+        "image": "./functions/navigate.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/navigate-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/navigate-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/navigate-3.webp"
+            }
+        ]
+    },
+    {
+        "name": "Couper",
+        "slug": "cut",
+        "description": "TODO",
+        "image": "./functions/cut.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/cut-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/cut-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/cut-3.webp"
+            }
+        ]
+    },
+    {
+        "name": "Régulation thermique",
+        "slug": "thermoregulate",
+        "description": "TODO",
+        "image": "./functions/thermoregulate.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/thermoregulate-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/thermoregulate-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/thermoregulate-3.webp"
+            }
+        ]
+    },
+    {
+        "name": "Structure",
+        "slug": "structure",
+        "description": "TODO",
+        "image": "./functions/structure.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/structure-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/structure-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/structure-3.webp"
+            }
+        ]
+    },
+    {
+        "name": "Renforcement de structure",
+        "slug": "structure-reinforcement",
+        "description": "TODO",
+        "image": "./functions/structure-reinforcement.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/structure-reinforcement-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/structure-reinforcement-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/structure-reinforcement-3.webp"
+            }
+        ]
+    },
+    {
+        "name": "Motifs organisationnels",
+        "slug": "organizational-patterns",
+        "description": "TODO",
+        "image": "./functions/organizational-patterns.svg",
+        "subcategories": [
+            {
+                "description": "TODO",
+                "image": "./subfunctions/organizational-patterns-1.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/organizational-patterns-2.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/organizational-patterns-3.webp"
+            },
+            {
+                "description": "TODO",
+                "image": "./subfunctions/organizational-patterns-4.webp"
+            }
+        ]
     }
 ]

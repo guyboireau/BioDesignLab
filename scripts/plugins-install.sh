@@ -4,13 +4,13 @@ if [ $# -eq 0 ]; then
         echo "Installing plugins from wp-plugins.txt"
         while IFS= read plugin || [ -n "$plugin" ]; do
             echo "Installing $plugin"
-            make wp plugin install -- --activate $plugin
+            wp plugin install $plugin --activate
         done < ./wp-plugins.txt
     fi
     echo "Done installing plugins"
 else
     echo "Installing $1"
-    make wp plugin install $1 -- --activate
+    wp plugin install $1 --activate
     if [ $? -ne 0 ]; then
         exit 1
     fi
