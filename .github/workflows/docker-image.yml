@@ -22,5 +22,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Data Seed
-      run: docker compose run --rm wp-cli node ./scripts/data-seed.mjs
+      run: docker compose run --rm wp-cli node ./usr/local/bin/scripts/data-seed.mjs
 
