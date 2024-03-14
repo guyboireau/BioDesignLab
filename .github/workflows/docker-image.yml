@@ -15,4 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: make init
+      run: docker compose -d --build
+          docker compose run --rm wp-cli node ./scripts/data-seed.mjs
