@@ -26,8 +26,8 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Load Data
-        run: docker compose run --rm wp-cli node ./scripts/data-seed.mjs
+      # - name: Load Data
+      #   run: docker compose run --rm wp-cli node ./scripts/data-seed.mjs
 
       - name: Deploy to Staging
         uses: appleboy/ssh-action@master
