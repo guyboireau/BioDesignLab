@@ -33,7 +33,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           script: |
-            export DOCKER_HOST=tcp://$PLAY_WITH_DOCKER.direct.labs.play-with-docker.com:2375
+            export DOCKER_HOST=tcp://ip172-18-0-17-cnphamgl2o9000fsgs80.direct.labs.play-with-docker.com:2375
             docker-compose down
             docker-compose pull
             docker-compose up -d
