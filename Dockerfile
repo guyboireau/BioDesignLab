@@ -20,4 +20,5 @@ COPY ./scripts/docker-install.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-install.sh
 RUN dos2unix /usr/local/bin/docker-install.sh
 
-CMD ["docker-install.sh" ]
+# Exécutez le script lors du démarrage du conteneur
+CMD ["sh", "-c", "/usr/local/bin/docker-install.sh"]
