@@ -54,6 +54,7 @@ const importCategory = async ({ category }) => {
   }
   console.log(`Created category ${category.name} with id ${stdout}`);
   if (category.subcategories && stdout) {
+    console.log(`Importing subcategories for ${category.name}`);
     await category.subcategories.forEach(async (subcategory, index) => {
       subcategory.name = `${category.name} - ${index}`;
       subcategory.slug = `${category.slug}-${index}`;
