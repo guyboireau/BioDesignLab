@@ -30,11 +30,12 @@ if ! $(wp core is-installed); then
     
     echo "Installing plugins from wp-plugins.txt"
     wp plugin delete akismet hello
-    if [ -f /var/www/html/wp-plugins.txt ]; then
-        cat /var/www/html/wp-plugins.txt | tr -d '\r' > /var/www/html/wp-plugins.txt
+    if [ -f ./wp-plugins.txt ]; then
+        echo "Installing plugins from wp-plugins.txt"
         while IFS= read plugin || [ -n "$plugin" ]; do
+            echo "Installing $plugin"
             wp plugin install $plugin --activate
-        done < /var/www/html/wp-plugins.txt
+        done < ./wp-plugins.txt
     fi
 
     # media settings

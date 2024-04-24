@@ -15,8 +15,8 @@ RUN apk update && apk add nodejs dos2unix
 RUN mv /usr/local/bin/wp /usr/local/bin/_wp && \
     echo -e '#!/bin/sh\n_wp --allow-root "$@"' > /usr/local/bin/wp && \
     chmod +x /usr/local/bin/wp
-
-COPY ./scripts/docker-install.sh /usr/local/bin/
+ADD scripts/docker-install.sh /usr/local/bin/
+COPY build/wp/.htaccess /var/www/html/.htaccess
 RUN chmod +x /usr/local/bin/docker-install.sh
 RUN dos2unix /usr/local/bin/docker-install.sh
 

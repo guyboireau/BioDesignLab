@@ -20,7 +20,9 @@ services:
       - biolab-net
   cms:
     container_name: biolab-wp
-    image: wordpress:latest
+    build:
+      context: .
+      dockerfile: ./build/wp/Dockerfile
     volumes:
       - biolab-wp:/var/www/html
     ports:
@@ -37,7 +39,9 @@ services:
       - biolab-net
   wp-cli:
     container_name: wp-cli
-    build: .
+    build:
+      context: .
+      dockerfile: ./build/wp-cli/Dockerfile
     depends_on:
       - db
       - cms
