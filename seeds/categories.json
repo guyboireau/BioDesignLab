@@ -80,7 +80,7 @@
         ]
     },
     {
-        "name": "Régulation thermique",
+        "name": "Thermoréguler",
         "slug": "thermoregulate",
         "description": "TODO",
         "image": "./functions/thermoregulate.svg",
@@ -100,10 +100,10 @@
         ]
     },
     {
-        "name": "Structure",
-        "slug": "structure",
+        "name": "Construire",
+        "slug": "build",
         "description": "TODO",
-        "image": "./functions/structure.svg",
+        "image": "./functions/build.svg",
         "subcategories": [
             {
                 "description": "TODO",
@@ -120,10 +120,10 @@
         ]
     },
     {
-        "name": "Renforcement de structure",
-        "slug": "structure-reinforcement",
+        "name": "Consolider",
+        "slug": "consolidate",
         "description": "TODO",
-        "image": "./functions/structure-reinforcement.svg",
+        "image": "./functions/consolidate.svg",
         "subcategories": [
             {
                 "description": "TODO",
@@ -140,10 +140,10 @@
         ]
     },
     {
-        "name": "Motifs organisationnels",
-        "slug": "organizational-patterns",
+        "name": "Organiser",
+        "slug": "organize",
         "description": "TODO",
-        "image": "./functions/organizational-patterns.svg",
+        "image": "./functions/organize.svg",
         "subcategories": [
             {
                 "description": "TODO",

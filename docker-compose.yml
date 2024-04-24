@@ -7,7 +7,7 @@ services:
     command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - biolab-db:/var/lib/mysql
-    restart: always
+    restart: on-failure
     environment:
       - MYSQL_ROOT_PASSWORD=somewordpress
       - MYSQL_DATABASE=wordpress
@@ -27,7 +27,7 @@ services:
       - 8000:80
     depends_on:
       - db
-    restart: always
+    restart: on-failure
     environment:
       - WORDPRESS_DB_HOST=db:3306
       - WORDPRESS_DB_USER=wordpress
